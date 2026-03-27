@@ -175,6 +175,53 @@ Real market data, 50 S&P 500 large-caps, 750 trading days. The heatmap shows Sha
 
 **Key takeaway:** +51% Sharpe improvement out-of-sample when using quarterly rebalancing.
 
+## Web Interface (Vortex Dashboard)
+
+The interactive web dashboard provides real-time portfolio analysis and visualization. Access it at `http://localhost:5001` after running the server.
+
+### Dashboard
+Shows real-time portfolio metrics and performance overview:
+- **Total Portfolios**: Monte Carlo simulation count (e.g., 50,000)
+- **Optimal Sharpe**: Best risk-adjusted return found by gradient optimization (2.250)
+- **Total Assets**: Number of securities in universe (50 S&P 500 large-caps)
+- **Cumulative Return**: Out-of-sample backtest performance (15.4%)
+- **Efficient Frontier Chart**: 50,000 Monte Carlo portfolios as scatter plot with Sharpe ratio heatmap
+- **Optimal Allocation**: Pie chart showing portfolio weights for top holdings
+- **Equity Curve Backtest**: Historical performance of optimised vs equal-weight portfolios
+- **Compute Efficiency**: GPU vs CPU throughput comparison (8.4x speedup)
+
+![Dashboard](docs/images/dashboard.png)
+
+### Efficient Frontier Page
+Detailed view of portfolio optimization results:
+- **Monte Carlo Scatter (50K portfolios)**: Return vs volatility scatter with Sharpe ratio coloring
+- **Convergence Chart**: Shows Sharpe ratio convergence during gradient descent optimization
+- Identifies the best Sharpe portfolio and minimum volatility portfolio on the frontier
+
+![Efficient Frontier Page](docs/images/efficient_frontier_page.png)
+
+### Backtesting Page
+Out-of-sample validation of portfolio strategy:
+- **Single Split Test**: Train on first 500 days, test on last 250 days (unseen data)
+  - In-sample Sharpe: 3.822 (overfitting)
+  - OOS Sharpe: 0.736 (realistic)
+- **Rolling Walk-Forward**: Quarterly rebalancing every ~63 days
+  - Shows +51% Sharpe improvement vs equal-weight
+  - Cumulative return curve for both optimised and baseline strategies
+- **Performance Metrics Table**: Annual return, volatility, Sharpe ratio, max drawdown for each strategy
+
+![Backtesting Page](docs/images/backtesting.png)
+
+### Asset Ranking Page
+Individual asset performance analysis:
+- Shows all 50 tickers with their metrics: annual return %, volatility %, and Sharpe ratio
+- Sector classification (Consumer, Tech, Finance, Industrial, Healthcare, etc.)
+- Status badges: "High Alpha", "Growth", etc.
+- Sortable table — click any column header to reorder
+- CSV export available for further analysis
+
+![Asset Ranking Page](docs/images/asset_ranking.png)
+
 ## Tech Stack
 
 - **Python**: NumPy, SciPy, Pandas, Flask, scikit-learn
