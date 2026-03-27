@@ -19,6 +19,18 @@ build/
 *.swo
 *~
 
+# Frontend (Node.js/JavaScript)
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/*.config.cjs
+package-lock.json
+yarn.lock
+.cache/
+
 # OS
 .DS_Store
 Thumbs.db
@@ -31,3 +43,13 @@ Thumbs.db
 # Logs
 *.log
 .pytest_cache/
+
+# Temporary/Generated
+.DS_Store
+*.swp
+*~
+.temp/
+tmp/
+generate_plots.py
+portfolio_optimizer_colab*.ipynb
+
