@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Data & models (optional — comment out if you want to version control these)
+# data/price_cache.csv
+# data/scorer_model.json
+# data/scorer_model.pkl
+
+# Logs
+*.log
+.pytest_cache/
