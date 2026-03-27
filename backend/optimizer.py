@@ -24,7 +24,7 @@ def get_device_info():
     """Return information about compute device."""
     if CUDA_AVAILABLE:
         gpu_name = torch.cuda.get_device_name(0)
-        gpu_mem = torch.cuda.get_device_properties(0).total_mem / 1e9
+        gpu_mem = torch.cuda.get_device_properties(0).total_memory / 1e9
         return {'device': 'cuda', 'gpu_name': gpu_name, 'gpu_memory_gb': round(gpu_mem, 1), 'torch': True}
     elif TORCH_AVAILABLE:
         return {'device': 'cpu', 'gpu_name': None, 'gpu_memory_gb': 0, 'torch': True}
