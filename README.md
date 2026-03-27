@@ -161,6 +161,20 @@ Single-split result is nearly flat vs equal-weight — typical for 1-year test w
 > All results are for the 2023–2026 period which included a strong bull market.
 > Do not interpret as a forward-looking prediction.
 
+## Visualizations
+
+### Efficient Frontier (50,000 Monte Carlo portfolios)
+Real market data, 50 S&P 500 large-caps, 750 trading days. The heatmap shows Sharpe ratios across the return-risk space.
+
+![Efficient Frontier](docs/images/efficient_frontier.png)
+
+### Out-of-Sample Backtest Results
+**Rolling walk-forward validation** — re-optimised every ~3 months on fresh data. The top chart shows cumulative returns on unseen test periods. The bottom chart compares the optimised portfolio vs equal-weight baseline across key metrics.
+
+![Backtest Results](docs/images/backtest_results.png)
+
+**Key takeaway:** +51% Sharpe improvement out-of-sample when using quarterly rebalancing.
+
 ## Tech Stack
 
 - **Python**: NumPy, SciPy, Pandas, Flask, scikit-learn
